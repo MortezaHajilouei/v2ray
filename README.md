@@ -1,3 +1,11 @@
+# v2ray-instalation x-ui
+
+2. sudo apt update
+3. sudo apt upgrade -y 
+4. sudo apt install curl socat -y
+ curl https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh --output bash.sh
+6. sudo bash bash.sh
+
 # v2ray-ip-limit
 
 tanks to @hossinasaadi
