@@ -28,7 +28,7 @@
     "inbounds": [
       {
         "listen": null,
-        "port": 8028,
+        "port": 80,
         "protocol": "vmess",
         "settings": {
           "clients": [
