@@ -1,0 +1,93 @@
+{
+    "routing": {
+      "rules": [
+        {
+          "inboundTag": [
+            "api"
+          ],
+          "outboundTag": "api",
+          "type": "field"
+        },
+        {
+          "ip": [
+            "geoip:private"
+          ],
+          "outboundTag": "blocked",
+          "type": "field"
+        },
+        {
+          "outboundTag": "blocked",
+          "protocol": [
+            "bittorrent"
+          ],
+          "type": "field"
+        }
+      ]
+    },
+    "dns": null,
+    "inbounds": [
+      {
+        "listen": null,
+        "port": 8028,
+        "protocol": "vmess",
+        "settings": {
+          "clients": [
+            {
+              "id": "b1421ad8-c341-475e-a69c-c9f4b149a797",
+              "alterId": 0,
+              "email": "",
+              "limitIp": 0
+            }
+          ],
+          "disableInsecureEncryption": false
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "none",
+          "tcpSettings": {
+            "acceptProxyProtocol": false,
+            "header": {
+              "type": "none"
+            }
+          }
+        },
+        "tag": "inbound-8028",
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls"
+          ]
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "protocol": "freedom",
+        "settings": {}
+      },
+      {
+        "protocol": "blackhole",
+        "settings": {},
+        "tag": "blocked"
+      }
+    ],
+    "transport": null,
+    "policy": {
+      "system": {
+        "statsInboundDownlink": true,
+        "statsInboundUplink": true
+      }
+    },
+    "api": {
+      "services": [
+        "HandlerService",
+        "LoggerService",
+        "StatsService"
+      ],
+      "tag": "api"
+    },
+    "stats": {},
+    "reverse": null,
+    "fakeDns": null
+  }
